@@ -12,7 +12,8 @@ Machine learning can be employed to learn which types of behaviours are more lik
 
 After getting a list of new customers with high propensity score to purchase, we can use this list to remarket them in Google Ads, which ultimately hope to re-arise their interests / remind them to buy. And hopefully, to increase amount of sales of the ecommerce platform.
 
-## - - - 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
 Full tutorial can be found at [link](https://cloud.google.com/architecture/predicting-customer-propensity-to-buy).
 
 
@@ -23,8 +24,11 @@ Full tutorial can be found at [link](https://cloud.google.com/architecture/predi
 
 # System Flow
 
-[picture of how data flows]
+A very clear/good picture from internet.
 
+[The Flow](https://raw.githubusercontent.com/GoogleCloudPlatform/analytics-componentized-patterns/master/retail/propensity-model/bqml/images/MLOPs-Pipeline-Architecture.png)
+
+credit to: [Google Cloud Platform](https://github.com/GoogleCloudPlatform/analytics-componentized-patterns/tree/master/retail/propensity-model/bqml)
 
 # The Dataset
 
