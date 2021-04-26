@@ -14,7 +14,7 @@ The raw dataset containing customers' behaviors in the web page.
 
 # Architecture of System
 
-[]
+<img src="img\system-diagram-2.png" style="zoom:50%;" />
 
 # System Flow
 
@@ -23,8 +23,3 @@ The raw dataset containing customers' behaviors in the web page.
 
 
 # The SQL queries in BigQuery
-
-# predicting-customer-propensity-to-buy-bigquery-ml-ai-platform
-The SQL queries in BigQuery to get training data (features+labels), to train and evaluate ML models and deploy ML models to AI Platform
-
-<img src="img\system-diagram-2.png" style="zoom:50%;" />
