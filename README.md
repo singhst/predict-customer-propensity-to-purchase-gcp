@@ -240,7 +240,7 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
 
 ## Export BigQuery trained model to Cloud Storage
 
-The command line:
+The command line in Cloud Shell:
 ```
 # To export BigQuery trained ML model to Cloud Storage
 
@@ -261,7 +261,7 @@ $ bq extract -m demo.logistic_model gs://demo-bq-aiplatform-propensity-to-buy-bu
 
 ## In AI Platform
 
-The command line:
+The command line in Cloud Shell:
 ```
 # Create and Deploy ML model from Cloud storage to AI Platform
 $ gcloud ai-platform models create logistic_model
@@ -291,7 +291,7 @@ The deployed ML model:
 
 # [Result] Online Prediction
 
-The command line:
+The command line in Cloud Shell:
 ```
 # To request a prediction to AI platform
 
