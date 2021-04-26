@@ -65,7 +65,7 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
 2. Fetch the labels of ML training data from the raw data set.
 
     <details>
-    <summary>SQL code...</summary>
+    <summary>SQL...</summary>
     <p>
 
     ```sql
@@ -83,7 +83,7 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
 3. Merge two datasets, feature and label, into one training dataset.
 
     <details>
-    <summary>SQL code...</summary>
+    <summary>SQL...</summary>
     <p>
 
     ```sql
@@ -133,7 +133,7 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
    * Logistic Regression model
 
         <details>
-        <summary>SQL code...</summary>
+        <summary>SQL...</summary>
         <p>
 
         ```sql
@@ -151,7 +151,7 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
    * DNN model
 
         <details>
-        <summary>SQL code...</summary>
+        <summary>SQL...</summary>
         <p>
 
         ```sql
@@ -175,7 +175,7 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
    * XGBoost
 
         <details>
-        <summary>SQL code...</summary>
+        <summary>SQL...</summary>
         <p>
 
         ```sql
@@ -208,7 +208,7 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
 
 6. Batch prediction in BigQuery
     <details>
-    <summary>SQL code...</summary>
+    <summary>SQL...</summary>
     <p>
     
     ```sql
