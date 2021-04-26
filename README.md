@@ -234,3 +234,76 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
 
 # Deploy trained ML model to AI Platform
 
+## Export BigQuery trained model to Cloud Storage
+
+The command line:
+```
+# To export BigQuery trained ML model to Cloud Storage
+
+## Create a new Busket
+$ gsutil mb 'gs://demo-bq-aiplatform-propensity-to-buy-bucket'
+
+## Export the trained ML model in BigQuery to Cloud Stoarge
+$ bq extract -m demo.logistic_model gs://demo-bq-aiplatform-propensity-to-buy-bucket/V_1
+```
+
+<details>
+<summary>Screenshot...</summary>
+<p>
+<img src="img\gcs-02-cloud-shell-save-bq-model.png" style="zoom:50%;" />
+</p>
+</details>
+<img src="img\gcs-01-save-bq-model.png" style="zoom:50%;" />
+
+## In AI Platform
+
+The command line:
+```
+# Create and Deploy ML model from Cloud storage to AI Platform
+$ gcloud ai-platform models create logistic_model
+
+$ gcloud ai-platform versions create --model=logistic_model V_1 --framework=tensorflow --python-version=3.7 \
+--runtime-version=1.15 --origin=gs://demo-bq-aiplatform-propensity-to-buy-bucket/V_1/ \
+--staging-bucket=gs://demo-bq-aiplatform-propensity-to-buy-bucket
+```
+
+<details>
+<summary>Screenshot 1...</summary>
+<p>
+<img src="img\ai-platform-01-cloud-shell-create-model.png" style="zoom:50%;" /> 
+</p>
+</details>
+
+<details>
+<summary>Screenshot 2...</summary>
+<p>
+<img src="img\ai-platform-02-cloud-shell-deploy-model.png" style="zoom:50%;" /> 
+</p>
+</details>
+
+The deployed ML model:
+<img src="img\ai-platform-03-deployed-model.png" style="zoom:50%;" /> 
+
+
+# [Result] Online Prediction
+
+The command line:
+```
+# To request a prediction to AI platform
+
+## Make an `.json` for online prediction
+echo "{\"bounces\": 0, \"time_on_site\": 7363}" > input.json
+
+## Request the predictions
+$ gcloud ai-platform predict --model demo_trained_model --region asia-east1 --version V_1 --json-instances input.json
+OR 
+$ gcloud ai-platform predict --model logistic_model --region us-east4 --version V_1 --json-instances ai_platform/input.json
+```
+
+Return result:
+```
+PREDICTED_WILL_BUY_ON_RETURN_VISIT  WILL_BUY_ON_RETURN_VISIT_PROBS            WILL_BUY_ON_RETURN_VISIT_VALUES
+['1']                               [0.661069205638202, 0.33893079436179796]  ['1', '0']
+```
+
+<img src="img\ai-platform-04-online-prediction.png" style="zoom:50%;" /> 
