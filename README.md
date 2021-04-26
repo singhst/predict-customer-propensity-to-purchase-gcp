@@ -4,33 +4,16 @@ An simple tutorial from Google Cloud Platform to build a system to predict custo
 We get real-world ecommerce datasets of Google Merchandise Store, so we can process the data to become training data (features + labels), train and evaluate ML models, and deploy ML models to AI Platform. 
 
 
-## Introduction
+# Introduction
 
-```
-We believed there are unique patterns hiddened inside the customer's web behaviours. We assume that 
-when customers reach an ecommerce website, they are looking for something, and would like to search 
-in the platform product engine or to filter products by clicking the sorting/filtering buttons. These 
-hiddened patterns can be appeared in their behaviours in the web. 
+We believed there are unique patterns hiddened inside the customer's web behaviours. We assume that when customers reach an ecommerce website, they are looking for something, and would like to search in the platform product engine or to filter products by clicking the sorting/filtering buttons. These hiddened patterns can be appeared in their behaviours in the web. 
 
-Machine learning can be employed to learn which types of behaviours are more likely to purchase, and 
-which types are less to purchase from the training data with known label (i.e. made a purchase/didn't 
-make a purchase). Then, the trained ML model can be used to predict the propensity to purchase 
-(i.e. classification task) of new customers by comparing their behaviours to the learned.
+Machine learning can be employed to learn which types of behaviours are more likely to purchase, and which types are less to purchase from the training data with known label (i.e. made a purchase/didn't make a purchase). Then, the trained ML model can be used to predict the propensity to purchase (i.e. classification task) of new customers by comparing their behaviours to the learned.
 
-After getting a list of new customers with high propensity score to purchase, we can use this list to 
-remarket them in Google Ads, which ultimately hope to re-arise their interests / remind them to buy. And 
-hopefully, to increase amount of sales of the ecommerce platform.
-```
+After getting a list of new customers with high propensity score to purchase, we can use this list to remarket them in Google Ads, which ultimately hope to re-arise their interests / remind them to buy. And hopefully, to increase amount of sales of the ecommerce platform.
 
+## - - - 
 Full tutorial can be found at [link](https://cloud.google.com/architecture/predicting-customer-propensity-to-buy).
-
-
-# The Dataset
-
-The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`, etc.) collected from the GA360 which connected to the web page. 
-
-<img src="img\bq-01-raw-dataset-1-labels.png" style="zoom:50%;" />
-<img src="img\bq-01-raw-dataset-2-features.png" style="zoom:50%;" />
 
 
 # Architecture of System
@@ -43,14 +26,24 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
 [picture of how data flows]
 
 
+# The Dataset
+
+The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`, etc.) collected from the GA360 which connected to the web page. 
+
+<details>
+<summary>Info</summary>
+<p>
+<img src="img\bq-01-raw-dataset-1-labels.png" style="zoom:50%;" />
+</p>
+</details>
+
+<img src="img\bq-01-raw-dataset-2-features.png" style="zoom:50%;" />
+
+
 # The SQL queries in BigQuery
 
 1. Fetch the features of ML training data from the raw data set.
 
-    <details>
-    <summary>SQL code...</summary>
-    <p>
-    
     ```sql
     # select initial features and label to feed into your model
     
@@ -64,8 +57,6 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     AND date BETWEEN '20160801' # train on first 9 months of data
     AND '20170430'
     ```
-    </p>
-    </details>
     
 2. Fetch the labels of ML training data from the raw data set.
 
@@ -132,7 +123,6 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     ```
     </p>
     </details>
-
 
 4. After prepared the training data, we can use to train 
 
