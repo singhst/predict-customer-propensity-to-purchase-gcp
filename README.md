@@ -289,7 +289,7 @@ The deployed ML model:
 <img src="img\ai-platform-03-deployed-model.png" style="zoom:50%;" /> 
 
 
-# [Result] Online Prediction
+## [Result] Online Prediction
 
 The command line in Cloud Shell:
 ```
