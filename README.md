@@ -1,7 +1,5 @@
 # Predicting Customer Propensity to Purchase
-An simple tutorial from Google Cloud Platform to build a system to predict customer propensity to purchase by using BigQuery ML and AI Platform.
-
-We get real-world ecommerce datasets of Google Merchandise Store, so we can process the data to become training data (features + labels), train and evaluate ML models, and deploy ML models to AI Platform. 
+An simple tutorial from Google Cloud Platform to build a system to predict customer propensity to purchase by using BigQuery ML and AI Platform. 
 
 
 # Introduction
@@ -11,6 +9,8 @@ We believed there are unique patterns hiddened inside the customer's web behavio
 Machine learning can be employed to learn which types of behaviours are more likely to purchase, and which types are less to purchase from the training data with known label (i.e. made a purchase/didn't make a purchase). Then, the trained ML model can be used to predict the propensity to purchase (i.e. classification task) of new customers by comparing their behaviours to the learned.
 
 After getting a list of new customers with high propensity score to purchase, we can use this list to remarket them in Google Ads, which ultimately hope to re-arise their interests / remind them to buy. And hopefully, to increase amount of sales of the ecommerce platform.
+
+We get real-world ecommerce datasets of Google Merchandise Store, so we can process the data to become training data (features + labels), train and evaluate ML models, and deploy ML models in AI Platform.
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 
@@ -53,13 +53,13 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     
     CREATE OR REPLACE TABLE demo.features AS
     SELECT
-    *
+        *
     FROM
-    `data-to-insights.ecommerce.web_analytics`
+        `data-to-insights.ecommerce.web_analytics`
     WHERE
-    totals.newVisits = 1
-    AND date BETWEEN '20160801' # train on first 9 months of data
-    AND '20170430'
+        totals.newVisits = 1
+      AND date BETWEEN '20160801' # train on first 9 months of data
+      AND '20170430'
     ```
     
 2. Fetch the labels of ML training data from the raw data set.
@@ -96,15 +96,15 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     FROM (
             # select features
             SELECT
-            fullVisitorId,
-            IFNULL(totals.bounces, 0) AS bounces,
-            IFNULL(totals.timeOnSite, 0) AS time_on_site
+                fullVisitorId,
+                IFNULL(totals.bounces, 0) AS bounces,
+                IFNULL(totals.timeOnSite, 0) AS time_on_site
             FROM
-            `demo.features`
+                `demo.features`
             WHERE
-            totals.newVisits = 1
-            AND date BETWEEN '20160801' # train on first 9 months of data
-            AND '20170430'
+                totals.newVisits = 1
+              AND date BETWEEN '20160801' # train on first 9 months of data
+              AND '20170430'
         )
     JOIN (
             SELECT
@@ -219,21 +219,17 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     FROM ML.PREDICT(MODEL demo.logistic_model,
     (
         SELECT
-        fullVisitorId,
-        bounces,
-        time_on_site
+            fullVisitorId,
+            bounces,
+            time_on_site
         from demo.propensity_data
     ))
     ```
     </p>
     </details>
 
-    <details>
-    <summary>Screenshot...</summary>
-    <p>
     <img src="img\bq-03-ml-batch-prediction.png" style="zoom:50%;" />
-    </p>
-    </details>
+
 
 
 # Online Prediction in AI Platform
