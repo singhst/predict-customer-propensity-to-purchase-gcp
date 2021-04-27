@@ -6,7 +6,7 @@ An simple tutorial from Google Cloud Platform to build a system to predict custo
 
 We believed there are unique patterns hiddened inside the customer's web behaviours. We assume that when customers reach an ecommerce website, they are looking for something, and would like to search in the platform product engine or to filter products by clicking the sorting/filtering buttons. These hiddened patterns can be appeared in their behaviours in the web. 
 
-Machine learning can be employed to learn which types of behaviours are more likely to purchase, and which types are less to purchase from the training data with known label (i.e. made a purchase/didn't make a purchase). Then, the trained ML model can be used to predict the propensity to purchase (i.e. classification task) of new customers by comparing their behaviours to the learned.
+Machine learning can be employed to learn which types of behaviours are more likely to purchase, and which types are less to purchase from the training data with known label (i.e. made a purchase `1` / didn't make a purchase `0`). Then, the trained ML model can be used to predict the propensity to purchase (i.e. classification task) of new customers by comparing their behaviours to the learned.
 
 After getting a list of new customers with high propensity score to purchase, we can use this list to remarket them in Google Ads, which ultimately hope to re-arise their interests / remind them to buy. And hopefully, to increase amount of sales of the ecommerce platform.
 
