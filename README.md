@@ -64,10 +64,6 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     
 2. Fetch the labels of ML training data from the raw data set.
 
-    <details>
-    <summary>SQL...</summary>
-    <p>
-
     ```sql
     # select initial features and label to feed into your model
     CREATE OR REPLACE TABLE demo.labels AS
@@ -77,14 +73,8 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     FROM
     `bigquery-public-data.google_analytics_sample.*`
     ```
-    </p>
-    </details>
 
 3. Merge two datasets, feature and label, into one training dataset.
-
-    <details>
-    <summary>SQL...</summary>
-    <p>
 
     ```sql
     CREATE OR REPLACE TABLE demo.propensity_data AS
@@ -125,16 +115,10 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     USING (fullVisitorId)
     ORDER BY time_on_site DESC;
     ```
-    </p>
-    </details>
 
 4. After prepared the training data, we can use to train 
 
    * Logistic Regression model
-
-        <details>
-        <summary>SQL...</summary>
-        <p>
 
         ```sql
         CREATE OR REPLACE MODEL `demo.logistic_model`
@@ -145,8 +129,6 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
         SELECT * EXCEPT (fullVisitorId, name, email, phone_number, credit_card)
         FROM `demo.training_data`;
         ```
-        </p>
-        </details>
 
    * DNN model
 
@@ -207,9 +189,6 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
     </details>
 
 6. Batch prediction in BigQuery
-    <details>
-    <summary>SQL...</summary>
-    <p>
     
     ```sql
     # predict the inputs (rows) from the input table
@@ -225,8 +204,6 @@ The raw dataset containing customers' behaviors (e.g. `time_on_site`, `bounces`,
         from demo.propensity_data
     ))
     ```
-    </p>
-    </details>
 
     <img src="img\bq-03-ml-batch-prediction.png" style="zoom:50%;" />
 
