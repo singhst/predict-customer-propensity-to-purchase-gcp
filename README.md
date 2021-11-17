@@ -287,13 +287,24 @@ PREDICTED_WILL_BUY_ON_RETURN_VISIT  WILL_BUY_ON_RETURN_VISIT_PROBS            WI
 
             
 ## Remarks
+
+(Credit to: [qwiklabs](https://www.qwiklabs.com/focuses/1794?parent=catalog))
+
+| Row | total_visitors | will_buy_on_return_visit |
+|--|--|--|
+|1| 729848 |0|
+|2| 11873 |1|
+            
+Analyzing the results, you can see that (11873 / 729848) = 1.6% of total visitors will return and purchase from the website. This includes the subset of visitors who bought on their very first session and then came back and bought again.
             
 What are some of the reasons a typical ecommerce customer will browse but not buy until a later visit? Choose all that could apply.
 
-The customer wants to comparison shop on other sites before making a purchase decision.
+* The customer wants to comparison shop on other sites before making a purchase decision.
+* The customer is waiting for products to go on sale or other promotion
+* The customer is doing additional research
 
-The customer is waiting for products to go on sale or other promotion
+This behavior is very common for luxury goods where significant up-front research and comparison is required by the customer before deciding (think car purchases) but also true to a lesser extent for the merchandise on this site (t-shirts, accessories, etc).
 
-The customer is doing additional research
+In the world of online marketing, identifying and marketing to these future customers based on the characteristics of their first visit will increase conversion rates and reduce the outflow to competitor sites.
 
-
+            
