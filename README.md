@@ -284,3 +284,16 @@ PREDICTED_WILL_BUY_ON_RETURN_VISIT  WILL_BUY_ON_RETURN_VISIT_PROBS            WI
 ```
 
 <img src="img\ai-platform-04-online-prediction.png" style="zoom:50%;" /> 
+
+            
+## Remarks
+            
+What are some of the reasons a typical ecommerce customer will browse but not buy until a later visit? Choose all that could apply.
+
+The customer wants to comparison shop on other sites before making a purchase decision.
+
+The customer is waiting for products to go on sale or other promotion
+
+The customer is doing additional research
+
+
