@@ -308,3 +308,20 @@ This behavior is very common for luxury goods where significant up-front researc
 In the world of online marketing, identifying and marketing to these future customers based on the characteristics of their first visit will increase conversion rates and reduce the outflow to competitor sites.
 
             
+Q: Which fields are known after a visitor's first session? (Check all that apply)
+* check
+* bounces
+* time_on_site
+* visitId
+            
+Q: Which field isn't known until later in the future after their first session?
+* time_on_site
+* bounces
+* will_buy_on_return_visit
+* visitId
+
+Discussion: will_buy_on_return_visit is not known after the first visit. Again, you're predicting for a subset of users who returned to your website and purchased. Since you don't know the future at prediction time, you cannot say with certainty whether a new visitor comes back and purchases. The value of building a ML model is to get the probability of future purchase based on the data gleaned about their first session.
+
+Question: Looking at the initial data results, do you think time_on_site and bounces will be a good indicator of whether the user will return and purchase or not?
+
+Answer: It's often too early to tell before training and evaluating the model, but at first glance out of the top 10 time_on_site, only 1 customer returned to buy, which isn't very promising. Let's see how well the model does.
