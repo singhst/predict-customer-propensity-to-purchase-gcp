@@ -330,3 +330,6 @@ Answer: It's often too early to tell before training and evaluating the model, b
 # Extra reference
 
 [Shopper intent prediction from clickstream e-commerce data with minimal browsing information](https://www.nature.com/articles/s41598-020-73622-y)
+
+[Recommendation System with Graphs at eCommerce and Foodtech: Flipkart, UberEats, Swiggy, Instacart, Delivery Hero, Amazon, etc.
+](https://medium.datadriveninvestor.com/recommendation-system-with-graphs-at-ecommerce-and-foodtech-flipkart-ubereats-swiggy-instacart-1fe01914ecc3)
