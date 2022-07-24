@@ -325,3 +325,8 @@ Discussion: will_buy_on_return_visit is not known after the first visit. Again, 
 Question: Looking at the initial data results, do you think time_on_site and bounces will be a good indicator of whether the user will return and purchase or not?
 
 Answer: It's often too early to tell before training and evaluating the model, but at first glance out of the top 10 time_on_site, only 1 customer returned to buy, which isn't very promising. Let's see how well the model does.
+
+
+# Extra reference
+
+[Shopper intent prediction from clickstream e-commerce data with minimal browsing information](https://www.nature.com/articles/s41598-020-73622-y)
